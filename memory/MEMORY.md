@@ -9,8 +9,9 @@
 ## 知识库路径（唯一根目录）
 
 `D:\Knowledge\HaopengKnowledge\` ← **这个是知识库的唯一路径，不要搞套娃，避免重复。**
-- GitHub仓库：`obsidian-knowledge`（见 `99-晓凡程序文件\GitHub同步方案-正式版.md`）
-- C盘WorkBuddy仓库：`workbuddy-backup`（同上）
+- GitHub仓库：`erichpcs/Knowledge`（https://github.com/erichpcs/Knowledge）
+- 记忆仓库：`erichpcs/Memory`（https://github.com/erichpcs/Memory）→ 对应 `D:\Knowledge\.workbuddy\memory/`
+- C盘WorkBuddy仓库：`workbuddy-backup`（见 `99-晓凡程序文件\GitHub同步方案-正式版.md`）
 
 - ⚠️ 主库已对齐契约skill结构（2026-05-06），详见当日日志
 
@@ -105,6 +106,16 @@
 - **04-X**：基础设施/操作规范
 - 关系契约图.md无编号（契约skill固定）
 - 新建前先查现有编号，禁止重复
+
+---
+
+## ⛔ Windows .bat 文件写入铁律（2026-05-12 血泪教训）
+
+**问题**：Git Bash 里反斜杠 `\` 是转义符，写 Windows 路径到 .bat 文件时 `\K`、`\H`、`\.` 会被吞掉。
+**后果**：路径 `D:\Knowledge\.workbuddy` 变成 `D:Knowledge.workbuddy`，.bat 双击报错。
+**犯了几次**：两次。昊鹏发火了。
+**正确做法**：用 Node.js 的 `String.fromCharCode(92)` 生成反斜杠，绝不硬编码 `\`。
+**禁止**：禁止用 Git Bash 的 `cat >` 或 `echo` 写包含 Windows 路径的 .bat 文件。
 
 ---
 
