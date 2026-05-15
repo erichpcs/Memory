@@ -1,0 +1,7 @@
+*.py
+*.txt
+teams/
+automations/
+browser_test.py
+video_test.py
+video_test_log.txt
